@@ -35,9 +35,7 @@ class Venta{
 	method cargarPrenda(prenda){
 		prendas.add(prenda)
 	}
-	method precioTotalDeLaVenta(){
-		 prendas.map({prenda => modoDePago.tipoDePago(prenda.precio())})
-	}
+	method precioTotalDeLaVenta() = prendas.sum({prenda => modoDePago.tipoDePago(prenda.precio())})
 	
 	method realizarVenta(prenda){
 		self.cargarPrenda(prenda)
